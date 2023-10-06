@@ -18,6 +18,10 @@ namespace OpenAI.Controllers
             return View();
         }
 
+        public IActionResult GenAI()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

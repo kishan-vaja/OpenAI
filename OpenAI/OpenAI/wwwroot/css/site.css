@@ -1,18 +1,107 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 30px;
+    width: 100vw;
+    height: 100vh;
+    /*background: url('../media/wallpaper2.jpg');*/
+    background-color: saddlebrown;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*opacity: 25%;*/
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+    .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+#myVideo {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+
+body {
+    background-color: lightblue;
+}
+
+.squareImage {
+    height: 100%;
+    width: 100%;
+}
+
+img:hover {
+    opacity: 0.5;
+}
+
+
+h1 {
+    background: linear-gradient(to bottom, #cfc09f 10%,#634f2c 12%, #cfc09f 20%, #cfc09f 17%,#ffecb3 60%,#3a2c0f 98%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 18vw;
+    margin: 0;
+    font-weight: 400;
+}
+
+    h1:after {
+        background: none;
+        content: attr(data-heading);
+        left: 0;
+        top: 0;
+        z-index: -1;
+        position: absolute;
+        text-shadow: -1px 0 1px #c6bb9f, 0 1px 1px #c6bb9f, 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(0, 0, 0, 0.4);
+    }
