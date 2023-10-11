@@ -5,12 +5,12 @@
 <link href="~/css/site.css" rel="stylesheet" type="text/css" />
 
 <div class="text-center">
-    
+
     @*<div>
-        <video autoplay muted loop id="myVideo">
-            <source src="~/media/GenerativeAITech.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
+    <video autoplay muted loop id="myVideo">
+    <source src="~/image/GenerativeAITech.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+    </video>
     </div>*@
 
     @*Main content*@
@@ -21,99 +21,118 @@
             Techopedia
         </div>
     </div>
-    <hr />
+    <br />
 
     @*Sub content*@
-    <div class="mt-2">
-        <h1 class="display-6">GenAI Tools</h1>
-        <div class="row mt-2">
-            <div class="col-sm-6">
-                Generative AI tools refer to software or systems that use neural network techniques to process and comprehend input data, subsequently producing meaningful responses.
-                Scribehow
-                <button id="btnReadMore" type="button" class="btn btn-sm btn-light" onclick="readMore()">Read More</button>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6">
-                        <img src="~/media/Google-Bard.png" alt="Google brad" class="img-thumbnail squareImage">
+    <div class="text-light">
+        <div class="mt-2">
+            <h1 class="display-6">GenAI Tools</h1>
+            <div class="row mt-2">
+                <div class="col-sm-6">
+                    Generative AI tools refer to software or systems that use neural network techniques to process and comprehend input data, subsequently producing meaningful responses.
+                    Scribehow
+                    <button id="btnReadMore" type="button" class="btn btn-sm btn-light" onclick="readMore()">Read More</button>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <img src="~/image/Google-Bard.png" alt="Google brad" class="img-thumbnail squareImage">
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <img src="~/image/MidJourneypng.png" alt="midJourny" class="img-thumbnail squareImage">
+                        </div>
                     </div>
-                    <div class="col-sm-6 col-md-6">
-                        <img src="~/media/MidJourneypng.png" alt="midJourny" class="img-thumbnail squareImage">
+                </div>
+            </div>
+        </div>
+        <hr class="hrHeight" />
+        <div class="mt-2">
+            <h1 class="display-6">GenAI Organisations</h1>
+            <div class="row mt-2">
+                <div class="col-6">
+                    Generative AI Organizations like Microsoft, Google, Amazon and IBM have invested hundreds of millions of dollars and massive compute power to build the foundational models on which services like ChatGPT and others depend.
+                    Gartner
+                    <button id="btnReadMore" type="button" class="btn btn-sm btn-light" onclick="readMore()">Read More</button>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">Test 1</div>
+                        <div class="col-6">Test 2</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <hr />
-    <div class="mt-2">
-        <h1 class="display-6">GenAI Organisations</h1>
-        <div class="row mt-2">
-            <div class="col-6">
-                Generative AI Organizations like Microsoft, Google, Amazon and IBM have invested hundreds of millions of dollars and massive compute power to build the foundational models on which services like ChatGPT and others depend.
-                Gartner
-                <button id="btnReadMore" type="button" class="btn btn-sm btn-light" onclick="readMore()">Read More</button>
-            </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-6">Test 1</div>
-                    <div class="col-6">Test 2</div>
+        <hr class="hrHeight" />
+        <div class="mt-2">
+            <h1 class="display-6">GenAI Applications</h1>
+            <div class="row mt-2">
+                <div class="col-6">
+                    @*Need to update*@
+                    Text: GPT-3, LaMDA, LLaMA, BLOOM and GPT-4.
+                    Code: OpenAI Codex.
+                    Images: DALL-E, Midjourney and Stable Diffusion.
+                    Video: Make-A-Video (Meta Platforms).
+                    Wikipedia
+                    <div>
+                        <button id="btnReadMore" type="button" class="btn btn-sm btn-light" onclick="readMore()">Read More</button>
+                        @{
+                            await Html.RenderPartialAsync("../Home/Partials/GenAIOrganization");
+                        }
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">Test 1</div>
+                        <div class="col-6">Test 2</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <hr />
-    <div class="mt-2">
-        <h1 class="display-6">GenAI Applications</h1>
-        <div class="row mt-2">
-            <div class="col-6">
-                @*Need to update*@
-                Text: GPT-3, LaMDA, LLaMA, BLOOM and GPT-4.
-                Code: OpenAI Codex.
-                Images: DALL-E, Midjourney and Stable Diffusion.
-                Video: Make-A-Video (Meta Platforms).
-                Wikipedia
-                <button id="btnReadMore" type="button" class="btn btn-sm btn-light" onclick="readMore()">Read More</button>
-            </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-6">Test 1</div>
-                    <div class="col-6">Test 2</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr />
+        <hr class="hrHeight" />
 
-    <div class="mt-2">
-        <h1 class="display-6">AI Jobs</h1>
-        <div class="row mt-2">
-            <div class="col-6">
-                The prime source for jobs and talents in AI, ML, Data Science and Big Data: Insights AI-Jobs
-                @*Need to update*@
-                Python source for tables and charts: Kaggle.
-                <button id="btnReadMore" type="button" class="btn btn-sm btn-light" onclick="readMore()">Read More</button>
-            </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-6">Test 1</div>
-                    <div class="col-6">Test 2</div>
+        <div class="mt-2">
+            <h1 class="display-6">AI Jobs</h1>
+            <div class="row mt-2">
+                <div class="col-6">
+                    The prime source for jobs and talents in AI, ML, Data Science and Big Data: Insights AI-Jobs
+                    @*Need to update*@
+                    Python source for tables and charts: Kaggle.
+                    <div>
+                        <button id="btnReadMore" type="button" class="btn btn-sm btn-light" onclick="readMore()">
+                            Read More
+                            @{
+                                await Html.RenderPartialAsync("../Home/Partials/GenAIJobs");
+                            }
+                        </button>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">Test 1</div>
+                        <div class="col-6">Test 2</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <hr />
-    <div class="mt-2">
-        <h1 class="display-6">GenAI Organisations</h1>
-        <div class="row mt-2">
-            <div class="col-6">
-                Generative AI Organizations like Microsoft, Google, Amazon and IBM have invested hundreds of millions of dollars and massive compute power to build the foundational models on which services like ChatGPT and others depend.
-                Gartner
-                <button id="btnReadMore" type="button" class="btn btn-sm btn-light" onclick="readMore()">Read More</button>
-            </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-6">Test 1</div>
-                    <div class="col-6">Test 2</div>
+        <hr class="hrHeight" />
+        <div class="mt-2">
+            <h1 class="display-6">GenAI Organisations</h1>
+            <div class="row mt-2">
+                <div class="col-6">
+                    Generative AI Organizations like Microsoft, Google, Amazon and IBM have invested hundreds of millions of dollars and massive compute power to build the foundational models on which services like ChatGPT and others depend.
+                    Gartner
+                    <div>
+                        <button id="btnReadMore" type="button" class="btn btn-sm btn-light" onclick="readMore()">Read More</button>
+                        @{
+                            await Html.RenderPartialAsync("../Home/Partials/GenAIOrganization");
+                        }
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">Test 1</div>
+                        <div class="col-6">Test 2</div>
+                    </div>
                 </div>
             </div>
         </div>

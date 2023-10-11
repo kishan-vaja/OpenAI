@@ -8,6 +8,52 @@ html {
     }
 }
 
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+
+@media (min-width: 576px) {
+    .container-sm, .container {
+        max-width: 100% !important;
+        margin: 0px 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-md, .container-sm, .container {
+        max-width: 100% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .container-lg, .container-md, .container-sm, .container {
+        max-width: 100% !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 100% !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 100% !important;
+    }
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -15,13 +61,16 @@ html {
 
 body {
     margin-bottom: 30px;
-    width: 100vw;
+    width: 98vw;
     height: 100vh;
-    /*background: url('../media/wallpaper2.jpg');*/
-    background-color: saddlebrown;
+    overflow-x: hidden;
+    /* width: 100vw;
+    height: 100vh;*/
+    /*background: url('../image/wallpaper2.jpg');*/
+    /*background-color: saddlebrown;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed;*/
     /*opacity: 25%;*/
 }
 
@@ -44,20 +93,6 @@ body {
         width: 100%;
     }
 
-
-@media screen and (max-width: 800px) {
-    .column {
-        flex: 50%;
-        max-width: 50%;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .column {
-        flex: 100%;
-        max-width: 100%;
-    }
-}
 
 #myVideo {
     object-fit: cover;
@@ -82,7 +117,6 @@ img:hover {
     opacity: 0.5;
 }
 
-
 h1 {
     background: linear-gradient(to bottom, #cfc09f 10%,#634f2c 12%, #cfc09f 20%, #cfc09f 17%,#ffecb3 60%,#3a2c0f 98%);
     -webkit-background-clip: text;
@@ -104,4 +138,93 @@ h1 {
         z-index: -1;
         position: absolute;
         text-shadow: -1px 0 1px #c6bb9f, 0 1px 1px #c6bb9f, 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(0, 0, 0, 0.4);
+    }
+
+.textAreaHeight {
+    height: 100px !important;
+    width: 100% !important;
+    display: block;
+    padding: 5px 15px;
+    font-size: 14px !important;
+    line-height: 1.42857143;
+    color: #2c3e50;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #dce4ec;
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.goldColour {
+    color: yellow;
+    /*text-shadow: initial;*/
+    text-decoration-color: black;
+}
+
+.websiteName {
+    color: darkblue;
+    /*border-bottom-style: dashed;*/
+    font-size: large;
+    font-weight: bolder;
+    /*text-shadow: initial;*/
+    text-decoration-color: black;
+}
+
+.hrHeight {
+    height: 2px !important;
+    color: yellow;
+}
+
+.homecontent {
+    background-color: #e2eefa;
+    color: #484e54;
+    transition: all .25s ease-in-out;
+    border: 1px solid #efe8e8;
+    font-size: 16px;
+    margin: 10px 5px;
+    padding: 10px;
+    border-radius: 2px;
+    -webkit-box-shadow: rgba(99,99,99,.2) 0 2px 8px 0;
+    -moz-box-shadow: rgba(99,99,99,.2) 0 2px 8px 0;
+    box-shadow: rgba(99,99,99,.2) 0 2px 8px 0;
+}
+
+.backgroundImg {
+    position: relative;
+    height: 50vh;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    /*background-image: url('../image/wallpaper2.jpg');*/
+    background-size: cover;
+}
+
+    .backgroundImg ::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: rgba(0,0,0,0.25);
+    }
+
+.background {
+    background: url('../image/wallpaper2.jpg');
+    border: 2px solid black;
+}
+
+.transbox {
+    background-color: darkblue;
+    border: 1px solid black;
+    opacity: 0.6;
+    background-size: 300px 100px;
+}
+
+    .transbox p {
+        margin: 5%;
+        font-weight: bold;
+        color: #000000;
     }
