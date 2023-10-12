@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OpenAI.Models;
 
@@ -11,9 +12,10 @@ using OpenAI.Models;
 namespace OpenAI.Migrations
 {
     [DbContext(typeof(GenAIToolsDbContext))]
-    partial class GenAIToolsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231012194113_RegistrationModule")]
+    partial class RegistrationModule
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
