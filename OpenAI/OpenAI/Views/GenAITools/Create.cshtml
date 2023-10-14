@@ -3,89 +3,57 @@
 @{
     ViewData["Title"] = "Create";
 }
+<div class="genAIBackground">
 
-<h1 class="display-6">Create</h1>
+    <h1 class="display-6">Create</h1>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="Input-group mt-2">
-                <div class="row ">
-                    <div>
-                        @Html.LabelFor(m => m.GenAIName, new{@class= "col-sm-4 col-form-label"})
-                    </div>
-                    <div>
-                        @Html.TextBoxFor(m=>m.GenAIName, new{@class="form-control ",AutoComplete=false, @id="txtGenAiName"})
-                        @Html.ValidationMessageFor(model => model.GenAIName, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="Input-group mt-2">
-                <div class="row ">
-                    <div>
-                        @Html.LabelFor(m => m.Summary, new{@class= "col-sm-4 col-form-label"})
-                    </div>
-                    <div>
-                        @Html.TextAreaFor(m=>m.Summary, new{@class="textAreaHeight form-control",@id="txtSummary",AutoComplete=false})
-                        @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
+                <div class="Input-group mt-2">
+                    <div class="row ">
+                        <div>
+                            @Html.LabelFor(m => m.GenAIName, new{@class= "col-sm-4 col-form-label"})
+                        </div>
+                        <div>
+                            @Html.TextBoxFor(m=>m.GenAIName, new{@class="form-control ",AutoComplete=false, @id="txtGenAiName"})
+                            @Html.ValidationMessageFor(model => model.GenAIName, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="Input-group mt-2">
-                <div>
-                    @Html.LabelFor(m => m.ImageFile, new{@class= "col-sm-4 col-form-label"})
-                </div>
-                <div>
-                    <input asp-for="ImageFile" accept="image/png,image/jpeg" class="form-control" id="txtImageName" />
-                    @*<input type="file" asp-for="ImageFile" class="form-control" accept="image/png,image/jpeg" id="txtImageName" />*@
-                </div>
-            </div>
-            
 
-            @*<div class="form-group">
-                <label asp-for="GenAIName" class="control-label"></label>
-                <input asp-for="GenAIName" class="form-control" />
-                <span asp-validation-for="GenAIName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Summary" class="control-label"></label>
-                <input asp-for="Summary" class="form-control" />
-                <span asp-validation-for="Summary" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageFilename" class="control-label"></label>
-                <input asp-for="ImageFilename" class="form-control" />
-                <span asp-validation-for="ImageFilename" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageFile" class="control-label"></label>
-                <input asp-for="ImageFile" accept="image/png,image/jpeg" class="form-control" />
-                <span asp-validation-for="ImageFile" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AnchorLink" class="control-label"></label>
-                <input asp-for="AnchorLink" class="form-control" />
-                <span asp-validation-for="AnchorLink" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Like" class="control-label"></label>
-                <input asp-for="Like" class="form-control" />
-                <span asp-validation-for="Like" class="text-danger"></span>
-            </div>*@
-
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="Input-group mt-2">
+                    <div class="row ">
+                        <div>
+                            @Html.LabelFor(m => m.Summary, new{@class= "col-sm-4 col-form-label"})
+                        </div>
+                        <div>
+                            @Html.TextAreaFor(m=>m.Summary, new{@class="textAreaHeight form-control",@id="txtSummary",AutoComplete=false})
+                            @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="Input-group mt-2">
+                    <div>
+                        @Html.LabelFor(m => m.ImageFile, new{@class= "col-sm-4 col-form-label"})
+                    </div>
+                    <div>
+                        <input asp-for="ImageFile" accept="image/png,image/jpeg" class="form-control" id="txtImageName" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
 
 @section Scripts {

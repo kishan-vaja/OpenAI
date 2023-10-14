@@ -2,8 +2,20 @@
     ViewData["Title"] = "GenAI Applications";
 }
 
-<link href="~/css/site.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="@Url.Content("~/js/site.js")" asp-append-version="true"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1 class="display-6">@ViewData["Title"]</h1>
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/pyscript.css" rel="stylesheet" type="text/css" />
+    <script defer src="~/js/pyscript.js"></script>
+    <script defer src="~/js/site.js"></script>
+    <py-env>
+        - numpy
+        - matplotlib
+    </py-env>    
+</head>
 
 <div class="text-center">
     <div class="mt-5">
@@ -71,6 +83,82 @@
                     </div>
                 </div>
             </div>
+            <hr class="hrHeight" />
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="transbox">
+                        <h1 class="display-6">Top five companies</h1>
+                        <hr class="hrHeight" />
+                        <p class="text-light">
+                            according to number of employee
+                        </p>
+                    </div>
+                </div>
+                <div id="plot" class="col-8"></div>
+            </div>
+            <hr class="hrHeight" />
+            <div class="row">
+                <div id="plotChart" class="col-8"></div>
+                <div class="col-md-4 text-center">
+                    <div class="transbox">
+                        <h1 class="display-6">Jobs distribution</h1>
+                        <hr class="hrHeight" />
+                        <p class="text-light">
+                            among top 10 in demand job title
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="hrHeight" />
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="transbox">
+                        <h1 class="display-6">Salaries</h1>
+                        <hr class="hrHeight" />
+                        <p class="text-light">
+                            in the last 3 years
+                        </p>
+                    </div>
+                </div>
+                <div id="salaries" class="col-8"></div>
+            </div>
+            <py-script>
+                import pandas as pd
+                import numpy as np
+                import matplotlib.pyplot as plt
+                import seaborn as sns
+                from pyodide.http import open_url
+                url = open_url('Partials/ds_salaries.csv')
+                df = pd.read_csv(url)
+                display(df.head(n=7), target="plot", append=False)
+            </py-script>
+            <py-script>
+                import pandas as pd
+                import numpy as np
+                import matplotlib.pyplot as plt
+                from pyodide.http import open_url
+                url = open_url('Partials/ds_salaries.csv')
+                df = pd.read_csv(url)
+                top_jobs = df.job_title.value_counts()[: 7]
+                m = df.shape[0]
+                job_distribution = top_jobs*100/m
+                job_distribution.plot(kind = 'pie', autopct = '%1.0f%%', figsize = (18, 10))
+                plt.title('Job distribution among top 10 in demand job title')
+                display(plt, target="plotChart", append=False)
+            </py-script>
+            <py-script>
+                import pandas as pd
+                import numpy as np
+                import matplotlib.pyplot as plt
+                import seaborn as sns
+                from pyodide.http import open_url
+                url = open_url('Partials/ds_salaries.csv')
+                df = pd.read_csv(url)
+                sns.barplot(x = 'work_year', y = 'salary_in_usd', data = df)
+                plt.title("Salaries")
+                display(plt, target="salary", append=False)
+            </py-script>
+
         </div>
     </div>
 </div>

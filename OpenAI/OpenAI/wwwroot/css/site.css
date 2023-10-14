@@ -74,7 +74,7 @@ body {
     position: relative;
     width: 100% !important;
     line-height: 30px;
-    white-space: nowrap;    
+    white-space: nowrap;
 }
 
 .fullPage {
@@ -134,34 +134,10 @@ body {
     padding: 20px;
 }
 
-/*img:hover {
-    opacity: 0.5;
-}
-*/
 h1 {
     color: gold;
     font-family: fantasy;
-    /*background: linear-gradient(to bottom, #cfc09f 10%,#634f2c 12%, #cfc09f 20%, #cfc09f 17%,#ffecb3 60%,#3a2c0f 98%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-    position: relative;
-    text-transform: uppercase;
-    font-size: 18vw;
-    margin: 0;
-    font-weight: 400;*/
 }
-
-    h1:after {
-        /*background: none;
-        content: attr(data-heading);
-        left: 0;
-        top: 0;
-        z-index: -1;
-        position: absolute;
-        text-shadow: -1px 0 1px #c6bb9f, 0 1px 1px #c6bb9f, 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(0, 0, 0, 0.4);*/
-    }
 
 .textAreaHeight {
     height: 100px !important;
@@ -180,22 +156,24 @@ h1 {
 
 .goldColour {
     color: yellow;
-    /*text-shadow: initial;*/
     text-decoration-color: black;
 }
 
 .websiteName {
     color: darkblue;
-    /*border-bottom-style: dashed;*/
     font-size: large;
     font-weight: bolder;
-    /*text-shadow: initial;*/
     text-decoration-color: black;
 }
 
 .hrHeight {
     height: 2px !important;
     color: yellow;
+}
+
+.genAIBackground {
+    background: url("~/image/wallpaper.jpg");
+    background-repeat: no-repeat;
 }
 
 .homecontent {

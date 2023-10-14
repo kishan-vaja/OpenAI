@@ -3,51 +3,40 @@
 @{
     ViewData["Title"] = "Details";
 }
+<div class="genAIBackground">
+    <h1 class="display-6  text-center">Details</h1>
 
-<h1 class="display-6  text-center">Details</h1>
-
-<div>
-    <hr class="hrHeight" />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GenAIName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GenAIName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Summary)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Summary)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageFilename)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageFilename)
-        </dd>
-        <dt class="col-sm-2">
-            Image
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@("~/image/"+Model.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail">
-        </dd>
-        @*<dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AnchorLink)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AnchorLink)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Like)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Like)
-        </dd>*@
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <hr class="hrHeight" />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.GenAIName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GenAIName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Summary)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Summary)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ImageFilename)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ImageFilename)
+            </dd>
+            <dt class="col-sm-2">
+                Image
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@("~/image/"+Model.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail">
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
