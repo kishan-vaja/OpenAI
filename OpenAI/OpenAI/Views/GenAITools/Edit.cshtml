@@ -4,12 +4,13 @@
     ViewData["Title"] = "Edit";
 }
 
-<div class="genAIBackground">
-    <h1 class="display-6 text-center">Edit GenAI Website</h1>
+<div class="parallax_body">
+    <br />
+    <h2 class="text-center">Edit GenAI Website</h2>
 
     <hr class="hrHeight" />
 
-    <div class="row">
+    <div class="row p-5">
         <div class="col-md-4">
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -21,7 +22,7 @@
                             @Html.LabelFor(m => m.GenAIName, new{@class= "col-sm-4 col-form-label"})
                         </div>
                         <div>
-                            @Html.TextBoxFor(m=>m.GenAIName, new{@class="form-control ",AutoComplete=false, @id="txtName"})
+                            @Html.TextBoxFor(m=>m.GenAIName, new{@class="form-control fullWidth",AutoComplete=false, @id="txtName"})
                             @Html.ValidationMessageFor(model => model.GenAIName, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -33,7 +34,7 @@
                             @Html.LabelFor(m => m.Summary, new{@class= "col-sm-4 col-form-label"})
                         </div>
                         <div>
-                            @Html.TextAreaFor(m=>m.Summary, new{@class="textAreaHeight form-control",@id="txtSummary",AutoComplete=false})
+                            @Html.TextAreaFor(m=>m.Summary, new{@class="textAreaHeight form-control fullWidth",@id="txtSummary",AutoComplete=false})
                             @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -43,16 +44,17 @@
                         @Html.LabelFor(m => m.ImageFilename, new{@class= "col-sm-4 col-form-label"})
                     </div>
                     <div>
-                        <input type="file" asp-for="ImageFilename" class="form-control" />
+                        <input type="file" asp-for="ImageFilename" class="form-control fullWidth" />
                     </div>
                 </div>
+                <br />
                 <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-primary" />
                 </div>
             </form>
         </div>
     </div>
-
+    <br />
     <div>
         <a asp-action="Index">Back to List</a>
     </div>

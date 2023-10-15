@@ -22,35 +22,43 @@ html {
     }
 }
 
-
 @media (min-width: 576px) {
     .container-sm, .container {
         max-width: 100% !important;
-        margin: 0px 5px;
+        margin-top: -10px !important;
+        padding: 0px !important;
     }
 }
 
 @media (min-width: 768px) {
     .container-md, .container-sm, .container {
         max-width: 100% !important;
+        margin-top: -10px !important;
+        padding: 0px !important;
     }
 }
 
 @media (min-width: 992px) {
     .container-lg, .container-md, .container-sm, .container {
         max-width: 100% !important;
+        padding: 0px !important;
+        margin-top: -10px !important;
     }
 }
 
 @media (min-width: 1200px) {
     .container-xl, .container-lg, .container-md, .container-sm, .container {
         max-width: 100% !important;
+        padding: 0px !important;
+        margin-top: -10px !important;
     }
 }
 
 @media (min-width: 1400px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
         max-width: 100% !important;
+        padding: 0px !important;
+        margin-top: -10px !important;
     }
 }
 
@@ -60,11 +68,9 @@ html {
 }
 
 body {
-    margin-bottom: 30px;
-    width: 98vw;
+    padding: 0px !important;
     overflow-x: hidden;
-    width: 100vw;
-    height: 90vh;
+    background-color: rgba(1,1,1,0.4);
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -78,7 +84,6 @@ body {
 }
 
 .fullPage {
-    padding: 200px;
     height: 100vh;
 }
 
@@ -87,12 +92,65 @@ body {
     height: 65vh;
 }
 
+.parallax {
+    background-image: url("../videos/video.gif");
+    min-height: 80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax_body {
+    background-image: url("../images/background/bg2.jpg");
+    min-height: 80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax_GenApplication {
+    background-image: url("../images/background/bg7.jpg");
+    min-height: 80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax_genaiOrganization {
+    background-image: url("../images/background/bg6.jpg");
+    min-height: 80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax_genaiTools {
+    background-image: url("../images/background/bg5.jpg");
+    min-height: 80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax_contacts {
+    background-image: url("../images/background/bg1.jpg");
+    min-height: 80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
     padding: 0 4px;
 }
-
 
 .column {
     flex: 25%;
@@ -106,15 +164,32 @@ body {
         width: 100%;
     }
 
+h1 {
+    font-family: 'Anton', 'sans-serif';
+    background-image: linear-gradient(to right, brown, brown, yellow, white, yellow, brown, brown);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: brown;
+    padding: 9vw 2vw 0vw 2vw;
+    text-align: center;
+    font-size: 8vw;
+}
+
+.homeText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2vw;
+    text-align: center
+}
 
 #myVideo {
     object-fit: cover;
     height: 100%;
     width: 100%;
-    position: fixed;
+    position: static;
     top: 20px;
     left: 0;
-    opacity: 15%
+    opacity: 25%
 }
 
 .fixedHeader {
@@ -125,23 +200,23 @@ body {
 }
 
 .squareImage {
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
 }
 
-.rowDiv {
-    background-color: black;
-    padding: 20px;
+.img-thumbnail {
+    height: 150px !important;
+    width: 150px !important;
 }
 
-h1 {
+h2 {
     color: gold;
     font-family: fantasy;
 }
 
 .textAreaHeight {
     height: 100px !important;
-    width: 100% !important;
+    width: 90vw !important;
     display: block;
     padding: 5px 15px;
     font-size: 14px !important;
@@ -171,11 +246,6 @@ h1 {
     color: yellow;
 }
 
-.genAIBackground {
-    background: url("~/image/wallpaper.jpg");
-    background-repeat: no-repeat;
-}
-
 .homecontent {
     background-color: #e2eefa;
     color: #484e54;
@@ -193,9 +263,9 @@ h1 {
 .transbox {
     background-color: darkblue;
     border: 1px solid black;
-    opacity: 0.6;
     background-size: 300px 100px;
-    height: 300px;
+    height: 100%;
+    opacity: 75%;
     padding: 25px;
 }
 
@@ -204,3 +274,7 @@ h1 {
         font-weight: bold;
         color: #000000;
     }
+
+.fullWidth {
+    width: 90vw;
+}

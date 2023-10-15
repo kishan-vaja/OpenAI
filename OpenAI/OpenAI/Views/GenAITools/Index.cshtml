@@ -4,8 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<div class="genAIBackground">
-    <h1 class="display-6 text-center">List of Generative AI Websites</h1>
+<div class="parallax_body">
+    <br />
+    <h2 class="text-center">List of Generative AI Websites</h2>
 
     <div class="text-center">
         <a asp-action="Create">Click here to add a new generative AI website</a>
@@ -13,61 +14,62 @@
 
 
     <hr class="hrHeight" />
-    <div class="row mt-2">
+    <div class="row mt-2 p-5">
         @foreach (var item in Model)
         {
             <div class="col-md-2">
                 <div class="homecontent">
                     @Html.DisplayFor(modelItem => item.GenAIName)
-                    <img src="@("~/image/"+item.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail squareImage">
+                    <img src="@("~/images/"+item.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail squareImage">
                 </div>
             </div>
         }
     </div>
 
     <hr class="hrHeight" />
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.GenAIName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Summary)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ImageFilename)
-                </th>
-                <th>
-                    Image
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <div class="p-5">
+        <table class="table text-light p-5">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.GenAIName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Summary)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ImageFilename)
-                    </td>
-                    <td>
-                        <img src="@("~/image/"+item.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail squareImage">
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GenAIName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Summary)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ImageFilename)
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GenAIName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Summary)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ImageFilename)
+                        </td>
+                        <td>
+                            <img src="@("~/images/"+item.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail squareImage">
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

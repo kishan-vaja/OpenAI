@@ -55,7 +55,7 @@ namespace OpenAI.Controllers
                 string fileName = Path.GetFileNameWithoutExtension(genAIToolsModel.ImageFile.FileName);
                 string extension = Path.GetExtension(genAIToolsModel.ImageFile.FileName);
                 genAIToolsModel.ImageFilename = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-                string path = Path.Combine(wwwRootPath + "/image/", genAIToolsModel.ImageFilename);
+                string path = Path.Combine(wwwRootPath + "/images/", genAIToolsModel.ImageFilename);
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {
                     await genAIToolsModel.ImageFile.CopyToAsync(fileStream);

@@ -1,0 +1,165 @@
+﻿@{
+    ViewData["Title"] = "GenAI Jobs";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/pyscript.css" rel="stylesheet" type="text/css" />
+    <script defer src="~/js/pyscript.js"></script>
+    <script defer src="~/js/site.js"></script>
+    <py-env>
+        - numpy
+        - matplotlib
+    </py-env>
+</head>
+
+<div class="parallax_contacts">
+    <div class="text-center">
+        <div class="mt-5">
+            <h1 class="display-4">GenAI Jobs</h1>
+        </div>
+        <div class="row mt-5">
+            <div class="row">
+                <div class="column">
+                    <img id="img" src="~/images/chatgpt.png" alt="GenAI Tools image" class="img-thumbnail image imgClass">
+                    <div class="middle">
+                        <span>Chat GPT</span><hr />
+                        <button type="button" id="button">Read More</button>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-sm-6">
+                            <img id="img" src="~/images/MidJourneypng.png" alt="GenAI Tools image" class="img-thumbnail img">
+                        </div>
+                        <div class="col-sm-6">
+                            ChatGPT is a large language model-based chatbot developed by OpenAI and launched on November 30, 2022, notable for enabling users to refine and steer a conversation towards a desired length, format, style, level of detail, and language used. (Wikipedia)
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img id="img" src="~/images/Google-Bard.png" alt="GenAI Tools image" class="img-thumbnail image img">
+                    <div class="middle">
+                        <span>Github Copilot</span><hr />
+                        <button type="button" id="button">Read More</button>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-sm-6">
+                            <img id="img" src="~/images/MidJourneypng.png" alt="GenAI Tools image" class="img-thumbnail img">
+                        </div>
+                        <div class="col-sm-6">
+                            GitHub Copilot is a cloud-based artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments by autocompleting code. (Wikipedia)
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img id="img" src="~/images/Dalle-2.png" alt="GenAI Tools image" class="img-thumbnail  img">
+                    <div class="middle">
+                        <span>DALLE-2</span>
+                        <button type="button" id="button">Read More</button>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-sm-6">
+                            <img id="img" src="~/images/MidJourneypng.png" alt="GenAI Tools image" class="img-thumbnail img">
+                        </div>
+                        <div class="col-sm-6">
+                            DALL-E and DALL-E 2 are text-to-image models developed by OpenAI using deep learning methodologies to generate digital images from natural language descriptions, called "prompts". DALL-E was revealed by OpenAI in a blog post in January 2021, and uses a version of GPT-3 modified to generate images. (Wikipedia)
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <img id="img" src="~/images/MidJourneypng.png" alt="GenAI Tools image" class="img-thumbnail img">
+                    <div class="middle">
+                        <span>Synthesia</span>
+                        <button type="button" id="button">Read More</button>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-sm-6">
+                            <img id="img" src="~/images/MidJourneypng.png" alt="GenAI Tools image" class="img-thumbnail img">
+                        </div>
+                        <div class="col-sm-6">
+                            Synthesia is a synthetic media generation platform used to create AI generated video content. Based in London, England, it counts among its users businesses including Amazon, Tiffany & Co. and IHG Hotels & Resorts. (Wikipedia)
+                        </div>
+                    </div>
+                </div>
+                <hr class="hrHeight" />
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="transbox">
+                            <h1 class="">Top five companies</h1>
+                            <hr class="hrHeight" />
+                            <p class="text-light">
+                                according to number of employee
+                            </p>
+                        </div>
+                    </div>
+                    <div id="plot" class="col-8"></div>
+                </div>
+                <hr class="hrHeight" />
+                <div class="row">
+                    <div id="plotChart" class="col-8"></div>
+                    <div class="col-md-4 text-center">
+                        <div class="transbox">
+                            <h1 class="">Jobs distribution</h1>
+                            <hr class="hrHeight" />
+                            <p class="text-light">
+                                among top 10 in demand job title
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hrHeight" />
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="transbox">
+                            <h1 class="">Salaries</h1>
+                            <hr class="hrHeight" />
+                            <p class="text-light">
+                                in the last 3 years
+                            </p>
+                        </div>
+                    </div>
+                    <div id="salaries" class="col-8"></div>
+                </div>
+                <py-script>
+                    import pandas as pd
+                    import numpy as np
+                    import matplotlib.pyplot as plt
+                    import seaborn as sns
+                    from pyodide.http import open_url
+                    url = open_url('Partials/ds_salaries.csv')
+                    df = pd.read_csv(url)
+                    display(df.head(n=7), target="plot", append=False)
+                </py-script>
+                <py-script>
+                    import pandas as pd
+                    import numpy as np
+                    import matplotlib.pyplot as plt
+                    from pyodide.http import open_url
+                    url = open_url('Partials/ds_salaries.csv')
+                    df = pd.read_csv(url)
+                    top_jobs = df.job_title.value_counts()[: 7]
+                    m = df.shape[0]
+                    job_distribution = top_jobs*100/m
+                    job_distribution.plot(kind = 'pie', autopct = '%1.0f%%', figsize = (18, 10))
+                    plt.title('Job distribution among top 10 in demand job title')
+                    display(plt, target="plotChart", append=False)
+                </py-script>
+                <py-script>
+                    import pandas as pd
+                    import numpy as np
+                    import matplotlib.pyplot as plt
+                    import seaborn as sns
+                    from pyodide.http import open_url
+                    url = open_url('Partials/ds_salaries.csv')
+                    df = pd.read_csv(url)
+                    sns.barplot(x = 'work_year', y = 'salary_in_usd', data = df)
+                    plt.title("Salaries")
+                    display(plt, target="salary", append=False)
+                </py-script>
+
+            </div>
+        </div>
+    </div>
+</div>

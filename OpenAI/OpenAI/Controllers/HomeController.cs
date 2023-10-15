@@ -22,12 +22,28 @@ namespace OpenAI.Controllers
         {
             return View();
         }
+
         public IActionResult Privacy()
         {
             return View();
         }
 
         public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult GenAIApplications()
+        {
+            return View();
+        }
+
+        public IActionResult GenAIJobs()
+        {
+            return View();
+        }
+
+        public IActionResult GenAIOrganization()
         {
             return View();
         }

@@ -3,10 +3,11 @@
 @{
     ViewData["Title"] = "Details";
 }
-<div class="genAIBackground">
-    <h1 class="display-6  text-center">Details</h1>
+<div class="parallax_body">
+    <br />
+    <h2 class="text-center">Details</h2>
 
-    <div>
+    <div class="p-5">
         <hr class="hrHeight" />
         <dl class="row">
             <dt class="col-sm-2">
@@ -31,10 +32,11 @@
                 Image
             </dt>
             <dd class="col-sm-10">
-                <img src="@("~/image/"+Model.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail">
+                <img src="@("~/images/"+Model.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail">
             </dd>
         </dl>
     </div>
+    <br />
     <div>
         <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
         <a asp-action="Index">Back to List</a>

@@ -3,12 +3,12 @@
 @{
     ViewData["Title"] = "Create";
 }
-<div class="genAIBackground">
+<div class="parallax_body">
+    <br />
+    <h2 class="text-center">Create</h2>
 
-    <h1 class="display-6">Create</h1>
-
-    <hr />
-    <div class="row">
+    <hr class="hrHeight" />
+    <div class="row text-light p-5">
         <div class="col-md-4">
             <form asp-action="Create" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -19,7 +19,7 @@
                             @Html.LabelFor(m => m.GenAIName, new{@class= "col-sm-4 col-form-label"})
                         </div>
                         <div>
-                            @Html.TextBoxFor(m=>m.GenAIName, new{@class="form-control ",AutoComplete=false, @id="txtGenAiName"})
+                            @Html.TextBoxFor(m=>m.GenAIName, new{@class="form-control fullWidth",AutoComplete=false, @id="txtGenAiName"})
                             @Html.ValidationMessageFor(model => model.GenAIName, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                             @Html.LabelFor(m => m.Summary, new{@class= "col-sm-4 col-form-label"})
                         </div>
                         <div>
-                            @Html.TextAreaFor(m=>m.Summary, new{@class="textAreaHeight form-control",@id="txtSummary",AutoComplete=false})
+                            @Html.TextAreaFor(m=>m.Summary, new{@class="textAreaHeight form-control fullWidth",@id="txtSummary",AutoComplete=false})
                             @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -41,18 +41,19 @@
                         @Html.LabelFor(m => m.ImageFile, new{@class= "col-sm-4 col-form-label"})
                     </div>
                     <div>
-                        <input asp-for="ImageFile" accept="image/png,image/jpeg" class="form-control" id="txtImageName" />
+                        <input asp-for="ImageFile" accept="image/png,image/jpeg" class="form-control fullWidth" id="txtImageName" />
                     </div>
                 </div>
+                <br />
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />
                 </div>
             </form>
         </div>
-    </div>
-
-    <div>
-        <a asp-action="Index">Back to List</a>
+        <br />
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
     </div>
 </div>
 

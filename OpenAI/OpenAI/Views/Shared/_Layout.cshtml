@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="fixedHeader">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">OpenAI</a>
                 <button class="navbar-light navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -48,30 +48,34 @@
         </nav>
     </div>
 
-
     <div class="container">
-        <main role="main" class="pt-5">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
     <div class="divFooter">
         <div class="container">
-            <div class="row text-light">
-                <div class="col-sm-6">
+            <div class="row text-light p-5">
+                <div class="col-sm-3">
                     <a asp-area="" class="text-light" asp-controller="Home" asp-action="Index">Home</a><br />
                     <a asp-area="" class="text-light" asp-controller="GenAITools" asp-action="Index">GenAISites</a><br />
+                </div>
+                <div class="col-sm-3">
                     <a asp-area="" class="text-light" asp-controller="Home" asp-action="Index">Jobs</a><br />
                     <a asp-area="" class="text-light" asp-controller="Home" asp-action="Contact">Contact</a><br />
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-3">
                     <a asp-area="" class="text-light" asp-controller="Home" asp-action="Contact">About Us</a><br />
                     <a asp-area="" class="text-light" asp-controller="Home" asp-action="Privacy">Copyright Info</a><br />
+                </div>
+                <div class="col-sm-3">
                     <a asp-area="" class="text-light" asp-controller="Home" asp-action="Contact">Follow Us</a><br />
                     <div class="text-light">
-                        <button class="btn btn-sm btn-light">Facebook</button>
-                        <button class="btn btn-sm btn-light">Google</button>
-                        <button class="btn btn-sm btn-light">Instagram</button>
+                        <button class="btn btn-sm btn-light"><i class="fa-brands fa-facebook"></i></button>
+                        <button class="btn btn-sm btn-light"><i class="fa-brands fa-youtube"></i></button>
+                        <button class="btn btn-sm btn-light"><i class="fa-brands fa-linkedin"></i></button>
+                        <button class="btn btn-sm btn-light"><i class="fa-brands fa-twitter"></i></button>
                     </div>
                 </div>
             </div>
