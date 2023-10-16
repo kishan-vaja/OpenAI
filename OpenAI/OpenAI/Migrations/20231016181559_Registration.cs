@@ -4,7 +4,7 @@
 
 namespace OpenAI.Migrations
 {
-    public partial class RegistrationModule : Migration
+    public partial class Registration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,27 +41,25 @@ namespace OpenAI.Migrations
                 oldType: "nvarchar(100)");
 
             migrationBuilder.CreateTable(
-                name: "RegitrationSet",
+                name: "UserRegitrationSet",
                 columns: table => new
                 {
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    IsAdmin = table.Column<bool>(type: "boolean", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(50)", nullable: true),
-                    Mobile = table.Column<int>(type: "int", nullable: false)
+                    IsAdmin = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RegitrationSet", x => x.UserId);
+                    table.PrimaryKey("PK_UserRegitrationSet", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "RegitrationSet");
+                name: "UserRegitrationSet");
 
             migrationBuilder.AlterColumn<string>(
                 name: "Summary",

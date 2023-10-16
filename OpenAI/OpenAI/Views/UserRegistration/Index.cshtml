@@ -1,0 +1,45 @@
+﻿@model IEnumerable<OpenAI.Models.UserRegistrationModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="parallax_body">
+    <br />
+    <p>
+        <a asp-action="Create">Create New User</a>
+    </p>
+    <div class="text-light p-5">
+        <table class="table">
+            <thead class="text-light">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Username)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Password)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsAdmin)
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="text-light">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsAdmin)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

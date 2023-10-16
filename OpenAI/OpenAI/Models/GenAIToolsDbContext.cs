@@ -8,7 +8,7 @@ namespace OpenAI.Models
         {
 
         }
-        public DbSet<RegitrationModel> RegitrationSet { get; set; }
+        public DbSet<UserRegistrationModel> UserRegitrationSet { get; set; }
         public DbSet<GenAIToolsModel> DbSet { get; set; }
     }
 }

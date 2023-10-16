@@ -20,7 +20,7 @@
             <div class="col-md-2">
                 <div class="homecontent">
                     @Html.DisplayFor(modelItem => item.GenAIName)
-                    <img src="@("~/images/"+item.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail squareImage">
+                    <img src="@("../images/"+item.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail squareImage">
                 </div>
             </div>
         }
@@ -60,7 +60,7 @@
                             @Html.DisplayFor(modelItem => item.ImageFilename)
                         </td>
                         <td>
-                            <img src="@("~/images/"+item.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail squareImage">
+                            <img src="@("../images/"+item.ImageFilename)" asp.asp-append-version="true" alt="GenAI Tool" class="img-thumbnail squareImage">
                         </td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

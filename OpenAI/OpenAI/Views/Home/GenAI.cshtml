@@ -7,57 +7,120 @@
 
 <div class="parallax_genaiTools">
     <div class="text-center genAIBackground">
-        <div class="mt-5">
-            <h1 class="display-4">GenAI Tools</h1>
+        <br />
+        <div>
+            <h2 class="display-6 text-center">GenAI Tools</h2>
         </div>
-        <div class="row mt-5">
-            <div class="row">
-                <div class="column">
-                    <img id="img" src="~/images/chatgpt.png" alt="GenAI Tools image" class="img-thumbnail image imgClass">
-                    <div class="middle">
-                        <span>ChatGPT</span><br />
-                        <button type="button" id="button">Read More</button>
+        <div class="row mt-5 p-5">
+            <div class="row cards-container">
+                <div class="card column">
+                    <div class="elms-animation">
+                        <span class="one"></span>
+                        <span class="two"></span>
+                        <span class="three"></span>
+                        <span class="four"></span>
                     </div>
-                    <div class="text-center">
-                        ChatGPT is a large language model-based chatbot developed by OpenAI and launched on November 30, 2022, notable for enabling users to refine and steer a conversation towards a desired length, format, style, level of detail, and language used. (Wikipedia)
-                    </div>
-                </div>
-                <div class="column">
-                    <img id="img" src="~/images/Google-Bard.png" alt="GenAI Tools image" class="img-thumbnail image img">
-                    <div class="middle">
-                        <span>Copilot</span><br />
-                        <button type="button" id="button">Read More</button>
-                    </div>
-                    <div class="text-center">
-                        GitHub Copilot is a cloud-based artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments by autocompleting code. (Wikipedia)
+                    <img id="img" src="~/images/genaisites/chatgpt.jpg" alt="GenAI Tools image" class="squareImage">
+                    <div class="content">
+                        <button class="black-button">Read More</button>
                     </div>
                 </div>
-                <div class="column">
-                    <img id="img" src="~/images/MidJourneypng.png" alt="GenAI Tools image" class="img-thumbnail img">
-                    <div class="middle">
-                        <span>Synthesia</span>
-                        <button type="button" id="button">Read More</button>
+                <div class="card column">
+                    <div class="elms-animation">
+                        <span class="one"></span>
+                        <span class="two"></span>
+                        <span class="three"></span>
+                        <span class="four"></span>
+                        <img id="img" src="~/images/genai/bard_thumbnail.jpg" alt="GenAI Tools image" class="squareImage">
                     </div>
-                    <div class="row text-center">
+                    <div class="content">
+                        <button class="red-button">Read More</button>
+                    </div>
+                </div>
+                <div class="card column">
+                    <div class="elms-animation">
+                        <span class="one"></span>
+                        <span class="two"></span>
+                        <span class="three"></span>
+                        <span class="four"></span>
+                        <img id="img" src="~/images/genaisites/midjourney_thumbnail.jpg" alt="GenAI Tools image" class="squareImage">
+                    </div>
+                    <div class="content">
+                        <button class="blue-button">Read More</button>
+                    </div>
+                </div>
+                <div class="card column">
+                    <div class="elms-animation">
+                        <span class="one"></span>
+                        <span class="two"></span>
+                        <span class="three"></span>
+                        <span class="four"></span>
+                        <img id="img" src="~/images/genaisites/dalle_thumbnail.jpg" alt="GenAI Tools image" class="squareImage">
+                    </div>
+                    <div class="content">
+                        <button class="green-button">Read More</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-light">
+                <div id="chatgpt" class="d-none">
+                    <div class="row text-center cardBackground p-5">
                         <div class="col-sm-6">
-                            <img id="img" src="~/images/MidJourneypng.png" alt="GenAI Tools image" class="img-thumbnail img">
+                            <img id="img" src="~/images/genai/chatgpt_large.jpg" alt="GenAI Tools image" class="largeImage">
                         </div>
-                        <div class="col-sm-6">
-                            Synthesia is a synthetic media generation platform used to create AI generated video content. Based in London, England, it counts among its users businesses including Amazon, Tiffany & Co. and IHG Hotels & Resorts. (Wikipedia)
+                        <div class="col-sm-6 text-wrap">
+                            ChatGPT is a large language model-based chatbot developed by OpenAI and launched on November 30, 2022, notable for enabling users to refine and steer a conversation towards a desired length, format, style, level of detail, and language used. (Wikipedia)
+                            <br />
+                            <div>
+                                <img id="img" src="~/images/genai/chatgpt_thumbnail.jpg" alt="GenAI Tools image">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="column">
-                    <img id="img" src="~/images/Dalle-2.png" alt="GenAI Tools image" class="img-thumbnail  img">
-                    <div class="middle">
-                        <span>DALLE-2</span>
-                        <button type="button" id="button">Read More</button>
+                <div id="github" class="d-none">
+                    <div class="row text-center cardBackground p-5">
+                        <div class="col-sm-6">
+                            <img id="img" src="~/images/genai/bard_large.jpg" alt="GenAI Tools image" class="largeImage">
+                        </div>
+                        <div class="col-sm-6 text-wrap">
+                            Bard is a conversational generative artificial intelligence chatbot developed by Google, based initially on the LaMDA family of large language models and later the PaLM LLM. (Wikipedia)
+                            <br />
+                            <div>
+                                <img id="img" src="~/images/genai/bard_thumbnail.jpg" alt="GenAI Tools image">
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        DALL-E and DALL-E 2 are text-to-image models developed by OpenAI using deep learning methodologies to generate digital images from natural language descriptions, called "prompts". DALL-E was revealed by OpenAI in a blog post in January 2021, and uses a version of GPT-3 modified to generate images. (Wikipedia)
+                </div>
+                <div id="dall-2" class="d-none">
+                    <div class="row text-center cardBackground p-5">
+                        <div class="col-sm-6">
+                            <img id="img" src="~/images/genai/midjourney_large.jpg" alt="GenAI Tools image" class="largeImage">
+                        </div>
+                        <div class="col-sm-6 text-wrap">
+                            Midjourney is a generative artificial intelligence program and service created and hosted by San Francisco-based independent research lab Midjourney, Inc. (Wikipedia)
+                            <br />
+                            <div>
+                                <img id="img" src="~/images/genaisites/midjourney_thumbnail.jpg" alt="GenAI Tools image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Synthesia" class="d-none">
+                    <div class="row text-center cardBackground p-5">
+                        <div class="col-sm-6">
+                            <img id="img" src="~/images/genai/dalle_large.jpg" alt="GenAI Tools image" class="largeImage">
+                        </div>
+                        <div class="col-sm-6 text-wrap">
+                            DALL-E and DALL-E 2 are text-to-image models developed by OpenAI using deep learning methodologies to generate digital images from natural language descriptions, called prompts (Wikipedia)
+
+                            <br />
+                            <div>
+                                <img id="img" src="~/images/genaisites/dalle_thumbnail.jpg" alt="GenAI Tools image">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

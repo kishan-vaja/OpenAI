@@ -12,14 +12,14 @@ using OpenAI.Models;
 namespace OpenAI.Migrations
 {
     [DbContext(typeof(GenAIToolsDbContext))]
-    [Migration("20231012194113_RegistrationModule")]
-    partial class RegistrationModule
+    [Migration("20231016181559_Registration")]
+    partial class Registration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.22")
+                .HasAnnotation("ProductVersion", "6.0.23")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -53,22 +53,16 @@ namespace OpenAI.Migrations
                     b.ToTable("DbSet");
                 });
 
-            modelBuilder.Entity("OpenAI.Models.RegitrationModel", b =>
+            modelBuilder.Entity("OpenAI.Models.UserRegistrationModel", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(50)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<bool>("IsAdmin")
-                        .HasColumnType("boolean");
-
-                    b.Property<int>("Mobile")
-                        .HasColumnType("int");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -78,9 +72,9 @@ namespace OpenAI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("UserId");
+                    b.HasKey("Id");
 
-                    b.ToTable("RegitrationSet");
+                    b.ToTable("UserRegitrationSet");
                 });
 #pragma warning restore 612, 618
         }
